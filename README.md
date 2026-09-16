@@ -1,6 +1,6 @@
 # Andre Kurait
 
-**Senior Engineer at AWS · 5.5+ years of experience · Austin, TX**
+**Senior Engineer at AWS · 6+ years of experience · Austin, TX**
 
 I'm a maintainer of the OpenSearch project's [OpenSearch Migrations](https://github.com/opensearch-project/opensearch-migrations), where I've authored [500+ merged pull requests](https://github.com/opensearch-project/opensearch-migrations/pulls?q=is%3Apr+is%3Amerged+author%3AAndreKurait). [Maintainer roster](https://github.com/opensearch-project/opensearch-migrations/blob/main/MAINTAINERS.md).
 
