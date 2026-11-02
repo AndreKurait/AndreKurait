@@ -1,32 +1,31 @@
 # Andre Kurait
 
-**Senior Engineer at AWS · 6+ years of experience · Austin, TX**
+**Cloud infrastructure · distributed systems · developer tooling**
 
-I'm a maintainer of the OpenSearch project's [OpenSearch Migrations](https://github.com/opensearch-project/opensearch-migrations), where I've authored [500+ merged pull requests](https://github.com/opensearch-project/opensearch-migrations/pulls?q=is%3Apr+is%3Amerged+author%3AAndreKurait). [Maintainer roster](https://github.com/opensearch-project/opensearch-migrations/blob/main/MAINTAINERS.md).
+I'm a senior engineer at AWS, a maintainer of [OpenSearch Migrations](https://github.com/opensearch-project/opensearch-migrations), and a contributor to [Floci](https://github.com/floci-io/floci), an open-source AWS emulator. I build concurrent Java systems, cloud API emulation, Kubernetes deployment tooling, and integration tests.
 
-I build search migration infrastructure and developer tools, working directly with enterprise customers and partners to turn deployment constraints, compatibility gaps, and production failures into reusable software. My work spans Lucene internals, concurrent Java pipelines, Kafka, Kubernetes, and the APIs and interfaces engineers use to operate them.
+## Floci — AWS emulation
 
-## Selected engineering work
+[**182 merged upstream pull requests**](https://github.com/floci-io/floci/pulls?q=is%3Apr+is%3Amerged+author%3AAndreKurait), spanning workflow execution, service compatibility, and concurrency.
 
-- **Incremental indexing and data recovery.** Authored the [delta-snapshot RFC](https://github.com/opensearch-project/opensearch-migrations/issues/1517) and implemented [update](https://github.com/opensearch-project/opensearch-migrations/pull/1762) and [delete](https://github.com/opensearch-project/opensearch-migrations/pull/1784) processing by comparing Lucene segments and live-document bitsets. More recently, built [recovery paths for indices with disabled or partially excluded `_source`](https://github.com/opensearch-project/opensearch-migrations/pull/2985), including streaming postings and regression tests for phrase-query behavior.
+- **Workflow and runtime execution.** Implemented [SWF emulation covering 39 modeled operations](https://github.com/floci-io/floci/pull/2257), including workflow state transitions and activity lifecycles. Added [Lambda provisioned-concurrency runtime initialization, routing, and cleanup](https://github.com/floci-io/floci/pull/6320).
+- **Concurrency primitives.** Built [bounded work queues and versioned signals](https://github.com/floci-io/floci/pull/6547) to limit workers and retained keys, coalesce notifications, and prevent concurrent execution for the same key.
+- **Compatibility verified against AWS.** Corrected [Step Functions callback authorization](https://github.com/floci-io/floci/pull/7277) using comparisons against real AWS APIs and signed SDK regression tests, including resource-scoped grants, explicit denies, and completed-token retries.
 
-- **Reusable migration architecture.** Built shared JavaScript transformations across traffic replay, metadata migration, and backfill so customers could adapt schemas and requests, including [batching support for existing transforms](https://github.com/opensearch-project/opensearch-migrations/pull/1337). Also [unified Elasticsearch and Solr migration paths](https://github.com/opensearch-project/opensearch-migrations/pull/2982) around shared orchestration, document readers, and work coordination.
+## OpenSearch Migrations — search infrastructure
 
-- **Failures operators can diagnose.** Fixed [Kafka offset stalls caused by asynchronous cleanup, partition reassignment, and idle output buffers](https://github.com/opensearch-project/opensearch-migrations/pull/3078). Added per-partition time-lag reporting and a diagnostic command that inspects records without changing consumer-group offsets.
+**Maintainer** · [**515 merged pull requests**](https://github.com/opensearch-project/opensearch-migrations/pulls?q=is%3Apr+is%3Amerged+author%3AAndreKurait) · [Maintainer roster](https://github.com/opensearch-project/opensearch-migrations/blob/main/MAINTAINERS.md)
 
-- **Deployment within customer constraints.** Redesigned [ECS ingress for managed search sources and GovCloud](https://github.com/opensearch-project/opensearch-migrations/pull/721), removing the need to install a capture proxy on customer hosts. Helped build Migration Assistant on Kubernetes through [workflow CLIs](https://github.com/opensearch-project/opensearch-migrations/pull/1858) and [integration tests with Argo Workflows](https://github.com/opensearch-project/opensearch-migrations/pull/2032).
+- **Java memory and concurrency.** Replaced a large in-heap term-position index with [external sorting and memory-mapped sidecars](https://github.com/opensearch-project/opensearch-migrations/pull/2886) for source reconstruction. Fixed a [Netty event-loop deadlock](https://github.com/opensearch-project/opensearch-migrations/pull/2718) by moving blocking response collection off the event loop.
+- **Kubernetes deployment and CI.** [Parallelized EKS provisioning and teardown and extracted shared Jenkins functions](https://github.com/opensearch-project/opensearch-migrations/pull/2678), improved [bootstrap readiness and cleanup after partial failures](https://github.com/opensearch-project/opensearch-migrations/pull/3448), and contributed [GitHub Actions test sharding](https://github.com/opensearch-project/opensearch-migrations/pull/1376).
+- **Incremental migration and correctness.** Authored the [delta-snapshot RFC](https://github.com/opensearch-project/opensearch-migrations/issues/1517) and implemented [update](https://github.com/opensearch-project/opensearch-migrations/pull/1762) and [delete](https://github.com/opensearch-project/opensearch-migrations/pull/1784) processing using Lucene segments and live-document bitsets. More recently, corrected [bulk request limits using exact serialized sizes](https://github.com/opensearch-project/opensearch-migrations/pull/3483).
 
-- **Faster feedback for the team.** Established [Testcontainers integration tests](https://github.com/opensearch-project/opensearch-migrations/pull/508) and helped reduce CI runtime from **44 to 8 minutes** through [parallel execution](https://github.com/opensearch-project/opensearch-migrations/pull/1302), caching, and [test sharding](https://github.com/opensearch-project/opensearch-migrations/pull/1376).
+## Developer and agent tooling
 
-I also contributed the [Amazon OpenSearch Service skill to AWS's agent toolkit](https://github.com/aws/agent-toolkit-for-aws/pull/101), packaging migration assessment, provisioning, search, and observability guidance for coding agents.
+- **[acp-traces](https://github.com/AndreKurait/acp-traces)** — a Rust proxy that adds OpenTelemetry tracing to Agent Client Protocol interactions, including prompt turns, tool calls, and timing.
+- **[TemporalCI](https://github.com/AndreKurait/TemporalCI)** — a Kubernetes-native CI project using Temporal workflows for build orchestration and EKS test-cluster lifecycle management.
+- **[AWS agent toolkit](https://github.com/aws/agent-toolkit-for-aws/pull/101)** — contributed the Amazon OpenSearch Service skill, covering migration, provisioning, search, and observability guidance for coding agents.
 
-## Customer work and public explanations
-
-I supported Octus's migration and co-authored the [AWS case study documenting 85% lower infrastructure costs after migration and subsequent resizing](https://aws.amazon.com/blogs/big-data/how-octus-achieved-85-infrastructure-cost-reduction-with-zero-downtime-migration-to-amazon-opensearch-service/). I've also delivered dozens of technical demos to enterprise customers and AWS partners.
-
-- [Accelerate your migration with reindexing from snapshot](https://aws.amazon.com/blogs/big-data/accelerate-your-migration-to-amazon-opensearch-service-with-reindexing-from-snapshot/) — co-authored AWS article.
-- [Migration Assistant: Capture and Replay](https://www.youtube.com/watch?v=WyOWlV7-By4) — public technical presentation.
-
-I like taking a problem from a customer conversation through a design document, implementation, testing, and operational tooling. The goal is software another engineer can understand, validate, and run.
+*Contribution counts checked November 2, 2026; upstream merged PRs only.*
 
 [LinkedIn](https://www.linkedin.com/in/andrekurait/) · [Email](mailto:andrekurait@gmail.com)
