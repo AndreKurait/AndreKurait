@@ -6,7 +6,7 @@ I'm a senior engineer at AWS, a maintainer of [OpenSearch Migrations](https://gi
 
 ## Floci — AWS emulation
 
-[**182 merged upstream pull requests**](https://github.com/floci-io/floci/pulls?q=is%3Apr+is%3Amerged+author%3AAndreKurait), spanning workflow execution, service compatibility, and concurrency.
+[**183 merged upstream pull requests**](https://github.com/floci-io/floci/pulls?q=is%3Apr+is%3Amerged+author%3AAndreKurait), spanning workflow execution, service compatibility, and concurrency.
 
 - **Workflow and runtime execution.** Implemented [SWF emulation covering 39 modeled operations](https://github.com/floci-io/floci/pull/2257), including workflow state transitions and activity lifecycles. Added [Lambda provisioned-concurrency runtime initialization, routing, and cleanup](https://github.com/floci-io/floci/pull/6320).
 - **Concurrency primitives.** Built [bounded work queues and versioned signals](https://github.com/floci-io/floci/pull/6547) to limit workers and retained keys, coalesce notifications, and prevent concurrent execution for the same key.
@@ -22,19 +22,22 @@ I'm a senior engineer at AWS, a maintainer of [OpenSearch Migrations](https://gi
 
 ## docker-cache — GitHub Actions caching
 
-I maintain [docker-cache](https://github.com/AndreKurait/docker-cache), a fork of [ScribeMD/docker-cache](https://github.com/ScribeMD/docker-cache) for caching built and pulled Docker images. Published [0.7.0](https://github.com/AndreKurait/docker-cache/releases/tag/0.7.0) with updated runtime and cache dependencies and a rebuilt action bundle.
+I maintain [docker-cache](https://github.com/AndreKurait/docker-cache), a fork of [ScribeMD/docker-cache](https://github.com/ScribeMD/docker-cache) for caching built and pulled Docker images. Released [0.7.1](https://github.com/AndreKurait/docker-cache/releases/tag/0.7.1), fixing cache lookup consistency across parallel jobs after updating the runtime and cache dependencies in 0.7.0.
 
-Used in public CI workflows for [OpenTelemetry Collector Contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/.github/workflows/build-and-test.yml#L465), [authentik](https://github.com/goauthentik/authentik/blob/main/.github/actions/setup/action.yml#L113), and [FS Crawler](https://github.com/dadoonet/fscrawler/blob/main/.github/workflows/maven.yml#L37).
+Earlier versions appear in public CI workflows in [OpenTelemetry Collector Contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/.github/workflows/build-and-test.yml#L465), [LACT](https://github.com/ilya-zlobintsev/LACT/blob/master/.github/workflows/build-packages.yaml#L26), and [FS Crawler](https://github.com/dadoonet/fscrawler/blob/main/.github/workflows/maven.yml#L37).
 
 ## Developer and agent tooling
 
+- **[snap-version](https://github.com/AndreKurait/snap-version)** — inspect and edit version metadata in offline OpenSearch and Elasticsearch snapshot copies, with format validation and checksum handling. Metadata edits do not convert index data or establish restore compatibility.
+- **[Jira MCP Skill](https://github.com/AndreKurait/jira-mcp-skill)** — configure selected coding-agent clients to launch the upstream Jira/Confluence MCP server while preserving other client settings. Published as `@andrekurait/jira-mcp-skill` on npm.
+- **[OpenSearch Migrations demo](https://github.com/AndreKurait/opensearch-migrations-demo)** — a Rust TUI for planning and provisioning disposable migration test environments, with a review step before provisioning.
 - **[AWS agent toolkit](https://github.com/aws/agent-toolkit-for-aws/pull/101)** — contributed the Amazon OpenSearch Service skill, covering migration, provisioning, search, and observability guidance for coding agents.
 
 ### Proofs of concept
 
-- **[acp-traces](https://github.com/AndreKurait/acp-traces)** — a Rust proxy that adds OpenTelemetry tracing to Agent Client Protocol interactions, including prompt turns, tool calls, and timing.
-- **[TemporalCI](https://github.com/AndreKurait/TemporalCI)** — a Kubernetes-native CI project using Temporal workflows for build orchestration and EKS test-cluster lifecycle management.
+- **[acp-traces](https://github.com/AndreKurait/acp-traces)** — an experimental Rust proxy that adds OpenTelemetry tracing to Agent Client Protocol interactions, including prompt turns, tool calls, and timing.
+- **[TemporalCI](https://github.com/AndreKurait/TemporalCI)** — a historical proof of concept for CI build orchestration with Temporal workflows and Kubernetes test-cluster lifecycles. Preserved as a reference; no active platform or deployment is maintained.
 
-*Contribution counts checked November 2, 2026; upstream merged PRs only.*
+*Contribution counts checked November 2, 2026; all-time upstream merged PRs only.*
 
 [LinkedIn](https://www.linkedin.com/in/andrekurait/) · [Email](mailto:andrekurait@gmail.com)
