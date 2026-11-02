@@ -20,6 +20,12 @@ I'm a senior engineer at AWS, a maintainer of [OpenSearch Migrations](https://gi
 - **Kubernetes deployment and CI.** [Parallelized EKS provisioning and teardown and extracted shared Jenkins functions](https://github.com/opensearch-project/opensearch-migrations/pull/2678), improved [bootstrap readiness and cleanup after partial failures](https://github.com/opensearch-project/opensearch-migrations/pull/3448), and contributed [GitHub Actions test sharding](https://github.com/opensearch-project/opensearch-migrations/pull/1376).
 - **Incremental migration and correctness.** Authored the [delta-snapshot RFC](https://github.com/opensearch-project/opensearch-migrations/issues/1517) and implemented [update](https://github.com/opensearch-project/opensearch-migrations/pull/1762) and [delete](https://github.com/opensearch-project/opensearch-migrations/pull/1784) processing using Lucene segments and live-document bitsets. More recently, corrected [bulk request limits using exact serialized sizes](https://github.com/opensearch-project/opensearch-migrations/pull/3483).
 
+## docker-cache — GitHub Actions caching
+
+I maintain [docker-cache](https://github.com/AndreKurait/docker-cache), a fork of [ScribeMD/docker-cache](https://github.com/ScribeMD/docker-cache) for caching built and pulled Docker images. Published [0.7.0](https://github.com/AndreKurait/docker-cache/releases/tag/0.7.0) with updated runtime and cache dependencies and a rebuilt action bundle.
+
+Used in public CI workflows for [OpenTelemetry Collector Contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/.github/workflows/build-and-test.yml#L465), [authentik](https://github.com/goauthentik/authentik/blob/main/.github/actions/setup/action.yml#L113), and [FS Crawler](https://github.com/dadoonet/fscrawler/blob/main/.github/workflows/maven.yml#L37).
+
 ## Developer and agent tooling
 
 - **[AWS agent toolkit](https://github.com/aws/agent-toolkit-for-aws/pull/101)** — contributed the Amazon OpenSearch Service skill, covering migration, provisioning, search, and observability guidance for coding agents.
