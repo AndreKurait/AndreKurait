@@ -22,9 +22,12 @@ I'm a senior engineer at AWS, a maintainer of [OpenSearch Migrations](https://gi
 
 ## Developer and agent tooling
 
+- **[AWS agent toolkit](https://github.com/aws/agent-toolkit-for-aws/pull/101)** — contributed the Amazon OpenSearch Service skill, covering migration, provisioning, search, and observability guidance for coding agents.
+
+### Proofs of concept
+
 - **[acp-traces](https://github.com/AndreKurait/acp-traces)** — a Rust proxy that adds OpenTelemetry tracing to Agent Client Protocol interactions, including prompt turns, tool calls, and timing.
 - **[TemporalCI](https://github.com/AndreKurait/TemporalCI)** — a Kubernetes-native CI project using Temporal workflows for build orchestration and EKS test-cluster lifecycle management.
-- **[AWS agent toolkit](https://github.com/aws/agent-toolkit-for-aws/pull/101)** — contributed the Amazon OpenSearch Service skill, covering migration, provisioning, search, and observability guidance for coding agents.
 
 *Contribution counts checked November 2, 2026; upstream merged PRs only.*
 
